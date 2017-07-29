@@ -1,14 +1,26 @@
 package com.revature.DAOimp;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 import com.revature.DAO.AttatchmentDAO;
+import com.revature.database.ConnectionFactory;
 import com.revature.objects.Attatchment;
 
 public class AttatchmentDAOImp implements AttatchmentDAO {
 
+	Connection conn = null;
+	ResultSet rs = null;
+	ConnectionFactory cf = null;
+	
+	public void setup(){
+		cf = ConnectionFactory.getInstance();
+	}
+	
 	public AttatchmentDAOImp() {
 		super();
+		setup();
 		// TODO Auto-generated constructor stub
 	}
 

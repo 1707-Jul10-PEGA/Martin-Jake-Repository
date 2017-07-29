@@ -1,12 +1,30 @@
 package com.revature.DAOimp;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 import com.revature.DAO.TR_FormDAO;
+import com.revature.database.ConnectionFactory;
 import com.revature.objects.TR_Form;
 
 public class TR_FormDAOImp implements TR_FormDAO {
 
+	Connection conn = null;
+	ResultSet rs = null;
+	ConnectionFactory cf = null;
+	
+	public void setup(){
+		cf = ConnectionFactory.getInstance();
+	}
+
+	public TR_FormDAOImp() {
+		super();
+		
+		setup();
+		
+	}
+	
 	@Override
 	public List<TR_Form> getAllTR_Forms() {
 		// TODO Auto-generated method stub

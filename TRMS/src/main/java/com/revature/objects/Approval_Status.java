@@ -1,14 +1,14 @@
 package com.revature.objects;
 
-public class Approver_Status {
+public class Approval_Status {
 
 	
 	private int APPROVAL_STATUS;
 	private String APPROVAL_TYPE;
 	
-	public Approver_Status(){}
+	public Approval_Status(){}
 
-	public Approver_Status(int aPPROVAL_STATUS, String aPPROVAL_TYPE) {
+	public Approval_Status(int aPPROVAL_STATUS, String aPPROVAL_TYPE) {
 		super();
 		APPROVAL_STATUS = aPPROVAL_STATUS;
 		APPROVAL_TYPE = aPPROVAL_TYPE;
