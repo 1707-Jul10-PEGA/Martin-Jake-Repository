@@ -66,7 +66,7 @@
   <ul>
     <li id="homeTab" class="active"><a onclick="loadRequestedSection('TRMS_home.html')"><i class="icon icon-home"></i> <span>Home</span></a></li>
     <li id="newTRTab" class=""> <a onclick="loadRequestedSection('TRMS_newTR.html')"><i class="icon icon-th-list"></i> <span>Create New Reimbursement Request</span></a></li>
-    <li id="myRequestsTab" class=""> <a onclick="loadRequestedSection('')"><i class="icon icon-th-list"></i> <span>View My Requests</span></a></li>
+    <li id="myRequestsTab" class=""> <a onclick="loadRequestedSection('TRMS_check_applications.html')"><i class="icon icon-th-list"></i> <span>View My Requests</span></a></li>
     <li id="checkRequestsTab" class=""> <a onclick="loadRequestedSection('')"><i class="icon icon-file"></i> <span>Check Open Request Applications</span></a></li>
     <li id="myTeamTab" class=""> <a onclick="loadRequestedSection('')"><i class="icon icon-signal"></i> <span>My Team</span></a></li>
   </ul>
@@ -77,11 +77,10 @@
 
 <!------------------------------main-container-part--------------------------->
 <div id="content">
-<!--breadcrumbs-->
-  <div id="content-header">
-    <div id="breadcrumb"> <a href="index.html" title="Go to Home" class="tip-bottom"><i class="icon-home"></i> Home</a></div>
-  </div>
-<!---End-breadcrumbs---->
+
+
+
+
 
 
 
@@ -124,6 +123,7 @@
 <script src="js/matrix.tables.js"></script> 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
 <script src="js/trms_alerts.js"></script>
+<script src="js/trms_tools.js"></script>
 
 <script type="text/javascript">
   // This function is called from the pop-up menus to transfer to
@@ -148,16 +148,9 @@
 function resetMenu() {
    document.gomenu.selector.selectedIndex = 2;
 }
-  
+ 
 
-
-function loadRequestedSection(contentRequested) {
-		
-	$( "#content" ).load(contentRequested);
-
-}
-
-
+loadRequestedSection('TRMS_home.html');
 
   
 </script>
