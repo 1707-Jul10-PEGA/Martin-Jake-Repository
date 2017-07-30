@@ -1,5 +1,7 @@
 package com.revature.objects;
 
+import java.util.UUID;
+
 public class Past_Claims {
 
 	
@@ -11,10 +13,10 @@ public class Past_Claims {
 	
 	public Past_Claims(){}
 
-	public Past_Claims(String cLAIM_ID, String eMPLOYEE_ID, double fINAL_REIMBURSEMENT, String dATE_REIMBURSED,
+	public Past_Claims(String eMPLOYEE_ID, double fINAL_REIMBURSEMENT, String dATE_REIMBURSED,
 			String tR_ID) {
 		super();
-		CLAIM_ID = cLAIM_ID;
+		CLAIM_ID = UUID.randomUUID().toString();
 		EMPLOYEE_ID = eMPLOYEE_ID;
 		FINAL_REIMBURSEMENT = fINAL_REIMBURSEMENT;
 		DATE_REIMBURSED = dATE_REIMBURSED;

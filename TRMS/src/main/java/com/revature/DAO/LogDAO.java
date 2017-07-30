@@ -13,7 +13,7 @@ public interface LogDAO {
 
 	public void addLog(Log l);
 
-	public void updateLog(String logID);
+	public void updateLog(String logID, Log log);
 
 	public void deleteLog(String logID);
 	

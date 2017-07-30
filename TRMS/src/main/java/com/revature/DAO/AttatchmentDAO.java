@@ -12,7 +12,7 @@ public interface AttatchmentDAO {
 
 	public void addAttatchment(Attatchment a);
 
-	public void updateAttatchment(String AttatchmentID);
+	public void updateAttatchment(String AttatchmentID, Attatchment att);
 
 	public void deleteAttatchment(String AttatchmentID);
 	
