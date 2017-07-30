@@ -1,0 +1,177 @@
+<div id="content-header">
+	<div id="breadcrumb">
+		<a href="index.html" title="Go to Home" class="tip-bottom"><i
+			class="icon-home"></i> Home</a><a href="#" class="current">New
+			Tuition Reimbursement Request Form</a>
+	</div>
+	<h1>New Tuition Reimbursement Request Form</h1>
+</div>
+
+<form id="newRequestForm" action="" method="post"
+	class="form-horizontal">
+	<div class="container-fluid">
+		<hr>
+		<div class="row-fluid">
+
+			<div class="span6">
+
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon"> <i class="icon-align-justify"></i>
+						</span>
+						<h5>Requester Information</h5>
+					</div>
+					<div class="widget-content nopadding">
+
+
+						<div class="control-group">
+							<label class="control-label">Employee ID:</label>
+							<div class="controls">
+								<input type="text" class="span11" placeholder="Employee ID"
+									name="employeeID" id="employeeID" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">First Name :</label>
+							<div class="controls">
+								<input type="text" class="span11" placeholder="First name"
+									name="firstname" id="firstname" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Last Name :</label>
+							<div class="controls">
+								<input type="text" class="span11" placeholder="Last name"
+									name="lastname" id="lastname" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Request date:</label>
+							<div class="controls">
+								<input type="text" data-date="01-02-2013"
+									data-date-format="dd-mm-yyyy" value=""
+									class="datepicker span11" id="requestdate" name="requestdate">
+								<span class="help-block">Date with Format (dd-mm-yy)</span>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Supervisor Name :</label>
+							<div class="controls">
+								<input type="text" class="span11" placeholder="Supervisor Name"
+									id="supervisorname" name="supervisorname" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Supervisor ID :</label>
+							<div class="controls">
+								<input type="text" class="span11" placeholder="Supervisor ID"
+									id="supervisorid" name="supervisorid" />
+							</div>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+
+			<div class="span6">
+				<div class="widget-box">
+					<div class="widget-title">
+						<span class="icon"> <i class="icon-align-justify"></i>
+						</span>
+						<h5>Event Information</h5>
+					</div>
+					<div class="widget-content nopadding">
+
+						<div class="control-group">
+							<label class="control-label">Event Name :</label>
+							<div class="controls">
+								<input type="text" class="span11" placeholder="Event Name"
+									name="eventname" id="eventname" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Event begin date</label>
+							<div class="controls">
+								<input type="text" data-date="01-02-2013"
+									data-date-format="dd-mm-yyyy" value=""
+									class="datepicker span11" name="eventbegindate"
+									id="eventbegindate"> <span class="help-block">Date
+									with Format (dd-mm-yy)</span>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Event end date:</label>
+							<div class="controls">
+								<input type="text" data-date="01-02-2013"
+									data-date-format="dd-mm-yyyy" value=""
+									class="datepicker span11" name="eventenddate" id="eventenddate">
+								<span class="help-block">Date with Format (dd-mm-yy)</span>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Location:</label>
+							<div class="controls">
+								<input type="password" class="span11"
+									placeholder="Event location. E.g 'University of Virginia' "
+									id="eventlocation" name="eventlocation" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Description :</label>
+							<div class="controls">
+								<textarea class="span11" id="eventdescription"
+									name="eventdescription"></textarea>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Cost :</label>
+							<div class="controls">
+								<input type="number" class="span11" placeholder="$0.0"
+									name="eventcost" id="eventcost" />
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">Event type :</label>
+							<div class="controls">
+								<select required name="eventtype" id="eventtype">
+									<option value="unicourse">University Course</option>
+									<option value="seminar">Seminar</option>
+									<option value="cpc">CPC</option>
+									<option value="cert">Certification</option>
+									<option value="tech">Technical Training</option>
+									<option value="other">Other</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label">File upload input</label>
+							<div class="controls">
+								<input type="file" pla /> <span class="help-block"
+									id="attachment">Optional</span>
+							</div>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="form-actions">
+		<button type="button" class="btn btn-success"
+			onclick="submitTrmsPrompt()">Submit Request</button>
+	</div>
+</form>
