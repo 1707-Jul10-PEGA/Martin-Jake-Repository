@@ -1,5 +1,7 @@
 package com.revature.objects;
 
+import java.util.UUID;
+
 public class TR_Form {
 
 	
@@ -15,10 +17,10 @@ public class TR_Form {
 	
 	public TR_Form(){}
 	
-	public TR_Form(String tR_ID, String eMPLOYEE_ID, String dATE_CREATED, String eVENT_ID, int rEQUIRES_MORE_INFO,
+	public TR_Form(String eMPLOYEE_ID, String dATE_CREATED, String eVENT_ID, int rEQUIRES_MORE_INFO,
 			String rEIMBURSEMENT_ID, int aPPROVAL_STATUS, String fINAL_GRADE) {
 		super();
-		TR_ID = tR_ID;
+		TR_ID = UUID.randomUUID().toString();
 		EMPLOYEE_ID = eMPLOYEE_ID;
 		DATE_CREATED = dATE_CREATED;
 		EVENT_ID = eVENT_ID;

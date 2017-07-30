@@ -1,5 +1,7 @@
 package com.revature.objects;
 
+import java.util.UUID;
+
 public class Log {
 
 	private String LOG_ID;
@@ -10,9 +12,9 @@ public class Log {
 	public Log(){}
 
 
-	public Log(String lOG_ID, String lOG_DATETIME, String lOG_TEXT) {
+	public Log(String lOG_DATETIME, String lOG_TEXT) {
 		super();
-		LOG_ID = lOG_ID;
+		LOG_ID = UUID.randomUUID().toString();
 		LOG_DATETIME = lOG_DATETIME;
 		LOG_TEXT = lOG_TEXT;
 	}

@@ -1,5 +1,7 @@
 package com.revature.objects;
 
+import java.util.UUID;
+
 public class Employee {
 
 	private String EMPLOYEE_ID;
@@ -13,10 +15,10 @@ public class Employee {
 	
 	public Employee(){}
 
-	public Employee(String eMPLOYEE_ID, String uSERNAME, String pASS_WORD, String fNAME, String lNAME, int tITLE,
+	public Employee(String uSERNAME, String pASS_WORD, String fNAME, String lNAME, int tITLE,
 			int bEN_CO_MEMBER, String sUPERVISED_BY) {
 		super();
-		EMPLOYEE_ID = eMPLOYEE_ID;
+		EMPLOYEE_ID = UUID.randomUUID().toString();
 		USERNAME = uSERNAME;
 		PASS_WORD = pASS_WORD;
 		FNAME = fNAME;
