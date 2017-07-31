@@ -58,13 +58,7 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-<<<<<<< HEAD
-		}finally {
-			if (conn != null) {
-				conn.close();
-			}
-=======
->>>>>>> 90e1f104d077ef9c012bc0b00b1d6ba3d94cbb20
+
 		}
 	
 		return null;
@@ -96,13 +90,7 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 		}	 catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-<<<<<<< HEAD
-		}finally {
-			if (conn != null) {
-				conn.close();
-			}
-=======
->>>>>>> 90e1f104d077ef9c012bc0b00b1d6ba3d94cbb20
+
 		}
 		
 		return null;
@@ -134,14 +122,9 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-<<<<<<< HEAD
-		}finally {
-			if (conn != null) {
-				conn.close();
-			}
-=======
->>>>>>> 90e1f104d077ef9c012bc0b00b1d6ba3d94cbb20
+
 		}
+		
 		
 	}
 
@@ -190,18 +173,14 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 			if (preparedStatement != null) {
 				preparedStatement.close();
 			}
-<<<<<<< HEAD
+
 			if (conn != null) {
 				conn.close();
-=======
-			if (preparedStatement != null) {
-				preparedStatement.close();
->>>>>>> 90e1f104d077ef9c012bc0b00b1d6ba3d94cbb20
 			}
-		}
 			
+		}
 	}
-
+	
 	@Override
 	public void deleteReimbursement(String rtID) {
 		// TODO Auto-generated method stub

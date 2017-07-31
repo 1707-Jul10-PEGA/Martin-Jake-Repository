@@ -14,12 +14,8 @@ public interface EmployeeDAO {
 	
 	public void addEmployee(Employee emp)  throws SQLException;
 	
-<<<<<<< HEAD
-	public void updateEmployee(String empID)  throws SQLException;
-=======
 	public void updateEmployee(String empID, Employee emp);
->>>>>>> 90e1f104d077ef9c012bc0b00b1d6ba3d94cbb20
 	
-	public void deleteEmployee(String empID)  throws SQLException;
+	public void deleteEmployee(String empID);
 	
 }
