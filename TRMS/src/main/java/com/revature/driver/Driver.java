@@ -7,12 +7,6 @@ public class Driver {
 	
 	public static void main(String[] args){
 		
-	
-		
-		EmployeeDAOImp emp = new EmployeeDAOImp();
-		
-		emp.getAllEmployees();
-		
 		
 	}
 	

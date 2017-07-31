@@ -1,5 +1,7 @@
 package com.revature.objects;
 
+import java.util.UUID;
+
 public class Event {
 
 	private String EVENT_ID;
@@ -14,10 +16,10 @@ public class Event {
 
 	
 	
-	public Event(String eVENT_ID, String sTART_DATE, String eND_DATE, String lOCATION, String dESCRIPTION,
+	public Event(String sTART_DATE, String eND_DATE, String lOCATION, String dESCRIPTION,
 			int mINIMUM_PASSING_GRADE, int gRADING_REQUIRED) {
 		super();
-		EVENT_ID = eVENT_ID;
+		EVENT_ID =UUID.randomUUID().toString();
 		START_DATE = sTART_DATE;
 		END_DATE = eND_DATE;
 		LOCATION = lOCATION;

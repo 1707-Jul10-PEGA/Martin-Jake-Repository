@@ -1,5 +1,7 @@
 package com.revature.objects;
 
+import java.util.UUID;
+
 public class TR_Form_User_Approval_Status {
 
 	//I apologize for the unwieldy name, but it makes sense in context 
@@ -11,10 +13,10 @@ public class TR_Form_User_Approval_Status {
 	
 	public TR_Form_User_Approval_Status(){}
 
-	public TR_Form_User_Approval_Status(String tUAS_ID, String tR_ID, String aPPROVER_ID, String sTATUS_ID,
+	public TR_Form_User_Approval_Status(String tR_ID, String aPPROVER_ID, String sTATUS_ID,
 			String tIME_APPROVED) {
 		super();
-		TUAS_ID = tUAS_ID;
+		TUAS_ID = UUID.randomUUID().toString();
 		TR_ID = tR_ID;
 		APPROVER_ID = aPPROVER_ID;
 		STATUS_ID = sTATUS_ID;

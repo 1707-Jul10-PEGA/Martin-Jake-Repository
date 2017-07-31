@@ -1,5 +1,7 @@
 package com.revature.objects;
 
+import java.util.UUID;
+
 public class Reimbursement {
 
 	private String REIMBURSEMENT_ID;
@@ -12,10 +14,10 @@ public class Reimbursement {
 	public Reimbursement(){}
 
 
-	public Reimbursement(String rEIMBURSEMENT_ID, int rEIMBURSEMENT_TYPE_ID, double rEIMBURSEMENT_REQUESTED,
+	public Reimbursement(int rEIMBURSEMENT_TYPE_ID, double rEIMBURSEMENT_REQUESTED,
 			double fINAL_REIMBURSEMENT_AMOUNT, String rEASON) {
 		super();
-		REIMBURSEMENT_ID = rEIMBURSEMENT_ID;
+		REIMBURSEMENT_ID = UUID.randomUUID().toString();
 		REIMBURSEMENT_TYPE_ID = rEIMBURSEMENT_TYPE_ID;
 		REIMBURSEMENT_REQUESTED = rEIMBURSEMENT_REQUESTED;
 		FINAL_REIMBURSEMENT_AMOUNT = fINAL_REIMBURSEMENT_AMOUNT;
