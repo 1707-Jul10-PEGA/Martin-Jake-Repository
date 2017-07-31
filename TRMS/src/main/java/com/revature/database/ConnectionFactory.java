@@ -28,13 +28,14 @@ public class ConnectionFactory {
         Connection conn = null;
 
         try {
-            Properties prop = new Properties();
-            prop.load(new FileReader("datasource.properties"));
-            conn = DriverManager.getConnection(prop.getProperty("url"), prop.getProperty("username"),
-                    prop.getProperty("password"));
-        } catch (SQLException | IOException e) {
+        	Class.forName ("oracle.jdbc.driver.OracleDriver");
+          conn = DriverManager.getConnection("jdbc:oracle:thin:@martin-db-instance.cyv5ylreauwt.us-west-2.rds.amazonaws.com:1521:ORCL","TRMS_DB","trms_560");
+        } catch (SQLException e) {
             e.printStackTrace();
-        }
+        } catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
         return conn;
 
