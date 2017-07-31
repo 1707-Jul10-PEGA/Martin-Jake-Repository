@@ -4,5 +4,7 @@
 /Servers/
 /RemoteSystemsTempFiles/
 /.recomenders/
+.recomenders/
 /Servers/*
 /TRMS\target\m2e-wtp\web-resources\META-INF\maven\com.revature.TRMS\TRMS\pom.properties
+.recomenders
