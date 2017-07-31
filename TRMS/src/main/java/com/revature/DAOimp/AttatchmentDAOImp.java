@@ -2,6 +2,7 @@ package com.revature.DAOimp;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
@@ -21,11 +22,11 @@ public class AttatchmentDAOImp implements AttatchmentDAO {
 	Connection conn = null;
 	ResultSet rs = null;
 	ConnectionFactory cf = null;
-	
-	public void setup(){
+
+	public void setup() {
 		cf = ConnectionFactory.getInstance();
 	}
-	
+
 	public AttatchmentDAOImp() {
 		super();
 		setup();
@@ -45,9 +46,9 @@ public class AttatchmentDAOImp implements AttatchmentDAO {
 			rs = s.executeQuery(sql);
 
 			while (rs.next()) {
-				Attatchment a = new Attatchment(rs.getBlob(2), rs.getString(3));
+				Attatchment a =null; //new Attatchment(rs.getBlob(2), rs.getString(3));
 				a.setATTATCHMENT_ID(rs.getString(1));
-				
+
 				al.add(a);
 
 			}
@@ -60,7 +61,7 @@ public class AttatchmentDAOImp implements AttatchmentDAO {
 
 	@Override
 	public Attatchment getAttatchment(String Attatchmentid) {
-		
+
 		conn = cf.getConnection();
 		String sql = "SELECT * FROM Attatchment WHERE Attatchment_ID=?";
 		Attatchment ap = null;
@@ -71,9 +72,9 @@ public class AttatchmentDAOImp implements AttatchmentDAO {
 			rs = ps.executeQuery();
 
 			while (rs.next()) {
-				ap = new Attatchment(rs.getBlob(2), rs.getString(3));
+				//ap = new Attatchment(rs.getBlob(2), rs.getString(3));
 				ap.setATTATCHMENT_ID(rs.getString(1));
-				
+
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -92,32 +93,37 @@ public class AttatchmentDAOImp implements AttatchmentDAO {
 		String sql = "INSERT INTO Attatchment (Attatchment_ID, Attatchment, TR_ID) VALUES (?,?,?)";
 
 		try {
-			File blob = new File("../src/test/resources/hey.txt");
-			//FileInputStream in = new FileInputStream(blob);
-			
+			File blob = a.getBLOB();
+			FileInputStream in = null;
+			try {
+				in = new FileInputStream(blob);
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, a.getATTATCHMENT_ID());
-			//ps.setBinaryStream(2,in, (int)blob.length());
+			ps.setBinaryStream(2,in, (int)blob.length());
 			ps.setString(3, a.getTR_FORM_ID());
 			ps.executeUpdate();
-			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	@Override
 	public void updateAttatchment(String AttatchmentID, Attatchment att) {
-	
+
 		conn = cf.getConnection();
 		String sql = "UPDATE Attatchment SET " + "Attatchment_ID=?, Attatchment=?, TR_ID=?" + "WHERE Attatchment_ID=?";
 
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, att.getATTATCHMENT_ID());
-			ps.setBlob(2, att.getBLOB());
+			//ps.setBlob(2, att.getBLOB());
 			ps.setString(3, att.getTR_FORM_ID());
 			ps.setString(4, AttatchmentID);
 			ps.executeUpdate();

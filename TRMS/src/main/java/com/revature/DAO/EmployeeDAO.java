@@ -13,7 +13,7 @@ public interface EmployeeDAO {
 	
 	public void addEmployee(Employee emp);
 	
-	public void updateEmployee(String empID);
+	public void updateEmployee(String empID, Employee emp);
 	
 	public void deleteEmployee(String empID);
 	

@@ -10,12 +10,14 @@ public class Attatchment_Tests {
 
 	public static void main(String[] args) {
 		
+		//NOTE: Attatchment is currently under development, and has not been debugged.
+		
 		AttatchmentDAOImp att = new AttatchmentDAOImp();
 		
 		
 		//Add Attatchment Test
 		File blob = new File("../src/test/resources/hey.txt");
-	//	FileInputStream in = new FileInputStream(blob);
+		//FileInputStream in = new FileInputStream(blob);
 		//Attatchment a = new Attatchment();
 		//att.addAttatchment(a);
 		
