@@ -1,15 +1,16 @@
 package com.revature.objects;
 
+import java.io.File;
 import java.sql.Blob;
 import java.util.UUID;
 
 public class Attatchment {
 
 	private String ATTATCHMENT_ID;
-	private Blob BLOB;
+	private File BLOB;
 	private String TR_FORM_ID;
 	
-	public Attatchment(Blob bLOB, String tR_FORM_ID) {
+	public Attatchment(File bLOB, String tR_FORM_ID) {
 		super();
 		ATTATCHMENT_ID = UUID.randomUUID().toString();
 		BLOB = bLOB;
@@ -29,11 +30,11 @@ public class Attatchment {
 		ATTATCHMENT_ID = aTTATCHMENT_ID;
 	}
 
-	public Blob getBLOB() {
+	public File getBLOB() {
 		return BLOB;
 	}
 
-	public void setBLOB(Blob bLOB) {
+	public void setBLOB(File bLOB) {
 		BLOB = bLOB;
 	}
 

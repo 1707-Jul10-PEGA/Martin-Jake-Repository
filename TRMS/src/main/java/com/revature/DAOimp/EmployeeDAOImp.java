@@ -1,13 +1,16 @@
 package com.revature.DAOimp;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.DAO.EmployeeDAO;
 import com.revature.database.ConnectionFactory;
+import com.revature.objects.Approval_Status;
 import com.revature.objects.Employee;
 
 public class EmployeeDAOImp implements EmployeeDAO {
@@ -22,48 +25,111 @@ public class EmployeeDAOImp implements EmployeeDAO {
 
 	public EmployeeDAOImp() {
 		super();
-		
 		setup();
-		
+
 	}
 
 	@Override
 	public List<Employee> getAllEmployees() {
-		// TODO Auto-generated method stub
 		
 		conn = cf.getConnection();
-		String sql = "SELECT * FROM EMPLOYEE";
-		Statement s ;
-		
+		String sql = "SELECT * FROM Employee";
+		Statement s;
+
+		List<Employee> al = new ArrayList<Employee>();
+
 		try {
-			s= conn.createStatement();
+			s = conn.createStatement();
 			rs = s.executeQuery(sql);
-			if(rs.next()){
-			System.out.println(rs.getString(1));
+
+			while (rs.next()) {
+				Employee ap = new Employee(rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5), rs.getInt(6),rs.getInt(7),rs.getString(8));
+				ap.setEMPLOYEE_ID(rs.getString(1));
+				al.add(ap);
+
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+		
 			e.printStackTrace();
 		}
-		
-		return null;
+
+		return al;
 	}
 
 	@Override
 	public Employee getEmployee(String empid) {
-		// TODO Auto-generated method stub
-		return null;
+		conn = cf.getConnection();
+		String sql = "SELECT * FROM Employee WHERE Employee_ID=?";
+		Employee ap = null;
+		
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, empid);
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				ap = new Employee(rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5), rs.getInt(6),rs.getInt(7),rs.getString(8));
+				ap.setEMPLOYEE_ID(rs.getString(1));
+				
+			}
+		} catch (SQLException e) {
+			
+			e.printStackTrace();
+		}
+
+		return ap;
 	}
 
 	@Override
 	public void addEmployee(Employee emp) {
-		// TODO Auto-generated method stub
+	
+		
+		conn = cf.getConnection();
+		String sql = "INSERT INTO Employee (Employee_id, username,pass_word, F_name,L_name, Ben_co_member, Supervised_by) VALUES (?,?,?,?,?,?,?)";
+
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, emp.getEMPLOYEE_ID());
+			ps.setString(2, emp.getUSERNAME());
+			ps.setString(3, emp.getPASS_WORD());
+			ps.setString(4, emp.getFNAME());
+			ps.setString(5, emp.getLNAME());
+			ps.setInt(6, emp.getBEN_CO_MEMBER());
+			ps.setString(7, emp.getSUPERVISED_BY());
+			ps.executeUpdate();
+			
+
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		}
+
 
 	}
 
 	@Override
-	public void updateEmployee(String empID) {
-		// TODO Auto-generated method stub
+	public void updateEmployee(String empID, Employee emp) {
+		conn = cf.getConnection();
+		String sql = "UPDATE Employee SET " + "Employee_id=?, username=?,pass_word=?, F_name=?,L_name=?, Ben_co_member=?, Supervised_by=?" + "WHERE employee_id=?";
+
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, emp.getEMPLOYEE_ID());
+			ps.setString(2, emp.getUSERNAME());
+			ps.setString(3, emp.getPASS_WORD());
+			ps.setString(4, emp.getFNAME());
+			ps.setString(5, emp.getLNAME());
+			ps.setInt(6, emp.getBEN_CO_MEMBER());
+			ps.setString(7, emp.getSUPERVISED_BY());
+			ps.setString(8, emp.getEMPLOYEE_ID());
+			
+			ps.executeUpdate();
+		
+
+		} catch (SQLException e) {
+		
+			e.printStackTrace();
+		}
 
 	}
 
