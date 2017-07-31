@@ -9,11 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD:TRMS/src/main/java/com/revature/servlets/Login.java
-import com.revature.auth.AuthenticateUser;
-=======
+
 import com.revature.auth.AuthenticateEmployee;
->>>>>>> 005e97b27b357edafeff5fb924ed167a03b57c08:TRMS/src/main/java/com/revature/servlets/Login.java
 
 /**
  * Servlet implementation class Sample
