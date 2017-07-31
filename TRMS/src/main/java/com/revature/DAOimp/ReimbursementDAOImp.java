@@ -30,7 +30,7 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 	}
 	
 	@Override
-	public List<Reimbursement> getAllReimbursements() {
+	public List<Reimbursement> getAllReimbursements() throws SQLException {
 		// TODO Auto-generated method stub
 		List<Reimbursement> reimbursementList = new ArrayList<Reimbursement>();
 		conn = cf.getConnection();
@@ -58,13 +58,17 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			if (conn != null) {
+				conn.close();
+			}
 		}
 	
 		return null;
 	}
 
 	@Override
-	public Reimbursement getReimbursement(String rid) {
+	public Reimbursement getReimbursement(String rid) throws SQLException {
 		// TODO Auto-generated method stub
 		Reimbursement reimbursement = null;
 		conn = cf.getConnection();
@@ -89,13 +93,17 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 		}	 catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			if (conn != null) {
+				conn.close();
+			}
 		}
 		
 		return null;
 	}
 
 	@Override
-	public void addReimbursement(Reimbursement rt) {
+	public void addReimbursement(Reimbursement rt) throws SQLException {
 		// TODO Auto-generated method stub
 		conn = cf.getConnection();
 		String rId = rt.getREIMBURSEMENT_ID();
@@ -120,6 +128,10 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}finally {
+			if (conn != null) {
+				conn.close();
+			}
 		}
 		
 	}
@@ -169,8 +181,8 @@ public class ReimbursementDAOImp implements ReimbursementDAO {
 			if (preparedStatement != null) {
 				preparedStatement.close();
 			}
-			if (preparedStatement != null) {
-				preparedStatement.close();
+			if (conn != null) {
+				conn.close();
 			}
 		}
 			

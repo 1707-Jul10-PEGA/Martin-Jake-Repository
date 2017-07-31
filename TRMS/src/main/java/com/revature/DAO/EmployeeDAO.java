@@ -1,5 +1,6 @@
 package com.revature.DAO;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import com.revature.objects.Employee;
@@ -7,14 +8,14 @@ import com.revature.objects.Employee;
 public interface EmployeeDAO {
 
 	
-	public List<Employee> getAllEmployees();	
+	public List<Employee> getAllEmployees() throws SQLException;	
 	
-	public Employee getEmployee(String empid);
+	public Employee getEmployee(String empid)  throws SQLException;
 	
-	public void addEmployee(Employee emp);
+	public void addEmployee(Employee emp)  throws SQLException;
 	
-	public void updateEmployee(String empID);
+	public void updateEmployee(String empID)  throws SQLException;
 	
-	public void deleteEmployee(String empID);
+	public void deleteEmployee(String empID)  throws SQLException;
 	
 }

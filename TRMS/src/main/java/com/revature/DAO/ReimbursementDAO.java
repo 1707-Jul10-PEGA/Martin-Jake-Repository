@@ -7,11 +7,11 @@ import com.revature.objects.Reimbursement;
 
 public interface ReimbursementDAO {
 
-	public List<Reimbursement> getAllReimbursements();	
+	public List<Reimbursement> getAllReimbursements() throws SQLException;	
 	
-	public Reimbursement getReimbursement(String rid);
+	public Reimbursement getReimbursement(String rid) throws SQLException;
 	
-	public void addReimbursement(Reimbursement rt);
+	public void addReimbursement(Reimbursement rt) throws SQLException;
 	
 	public void updateReimbursement(String rtID, Reimbursement reimbursement) throws SQLException;
 	
