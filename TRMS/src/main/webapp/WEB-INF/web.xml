@@ -15,12 +15,12 @@
   
   <servlet>
     <description></description>
-    <display-name>Authentication</display-name>
-    <servlet-name>Authentication</servlet-name>
+    <display-name>AuthenticationServlet</display-name>
+    <servlet-name>AuthenticationServlet</servlet-name>
     <servlet-class>com.revature.servlets.Authentication</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Authentication</servlet-name>
+    <servlet-name>AuthenticationServlet</servlet-name>
     <url-pattern>/authentication</url-pattern>
   </servlet-mapping>
   

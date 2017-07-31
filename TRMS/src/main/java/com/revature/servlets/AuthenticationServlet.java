@@ -6,18 +6,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.auth.AuthenticateUser;
+import com.revature.auth.AuthenticateEmployee;
 
 /**
- * Servlet implementation class Authentication
+ * Servlet implementation class AuthenticationServlet
  */
-public class Authentication extends HttpServlet {
+public class AuthenticationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Authentication() {
+    public AuthenticationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -36,20 +36,23 @@ public class Authentication extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-				
+		
+		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-	
+		System.out.println(username);
+		System.out.println(password);
 		
-		AuthenticateUser auth = new AuthenticateUser();
+//		AuthenticateUser auth = new AuthenticateUser();
+//			
+//		if(auth.authenticateUser(username, password)) {
+//			System.out.println("Login succesfull");
+//		}
+//		else {
+//			System.out.println("Incorrect credentials");
+//			request.getRequestDispatcher("login.html").forward(request, response);
+//		}
 			
-		if(auth.authenticateUser(username, password)) {
-			System.out.println("Login succesfull");
-		}
-		
-		
-		
-	
 		
 	}
 
