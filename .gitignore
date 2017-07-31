@@ -1,7 +1,9 @@
 /.metadata/
-/.metadata/
+
+.metadata/
 
 /Servers/
+Servers/
 /RemoteSystemsTempFiles/
 /.recomenders/
 .recomenders/
