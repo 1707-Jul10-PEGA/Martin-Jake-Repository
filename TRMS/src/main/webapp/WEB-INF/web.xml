@@ -15,12 +15,21 @@
   
   <servlet>
     <description></description>
+<<<<<<< HEAD
     <display-name>Authentication</display-name>
     <servlet-name>Authentication</servlet-name>
     <servlet-class>com.revature.servlets.Authentication</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Authentication</servlet-name>
+=======
+    <display-name>AuthenticationServlet</display-name>
+    <servlet-name>AuthenticationServlet</servlet-name>
+    <servlet-class>com.revature.servlets.AuthenticationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AuthenticationServlet</servlet-name>
+>>>>>>> 005e97b27b357edafeff5fb924ed167a03b57c08
     <url-pattern>/authentication</url-pattern>
   </servlet-mapping>
   

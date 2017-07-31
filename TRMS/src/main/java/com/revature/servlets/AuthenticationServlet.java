@@ -3,28 +3,23 @@ package com.revature.servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-<<<<<<< HEAD:TRMS/src/main/java/com/revature/servlets/Login.java
-import com.revature.auth.AuthenticateUser;
-=======
 import com.revature.auth.AuthenticateEmployee;
->>>>>>> 005e97b27b357edafeff5fb924ed167a03b57c08:TRMS/src/main/java/com/revature/servlets/Login.java
 
 /**
- * Servlet implementation class Sample
+ * Servlet implementation class AuthenticationServlet
  */
-public class Login extends HttpServlet {
+public class AuthenticationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Login() {
+    public AuthenticationServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,10 +29,8 @@ public class Login extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		RequestDispatcher view = request.getRequestDispatcher("login.html");
-		view.forward(request, response);
-		
+//		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("inside doGET");
 	}
 
 	/**
@@ -46,9 +39,25 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
+		PrintWriter writer = response.getWriter();
 		
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		System.out.println(username);
+		System.out.println(password);
 		
-		
+		AuthenticateEmployee auth = new AuthenticateEmployee();
+			
+		if(auth.authenticateUser(username, password)) {
+			System.out.println("Login succesfull");
+			writer.println("Access Grated!");
+			
+		}
+		else {
+			System.out.println("Incorrect credentials");
+			request.getRequestDispatcher("login.html").forward(request, response);
+		}
+			
 		
 	}
 

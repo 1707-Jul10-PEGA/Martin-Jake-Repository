@@ -29,6 +29,18 @@ public class EmployeeDAOImp implements EmployeeDAO {
 
 	}
 
+	
+	public Employee searchEmpsByUsername(List<Employee> emplist, String username){
+		
+		for(Employee emp: emplist){
+			if(emp.getUSERNAME().equals(username)){
+				return emp;
+			}
+		}
+		
+		return null;
+	}
+	
 	@Override
 	public List<Employee> getAllEmployees() {
 		
