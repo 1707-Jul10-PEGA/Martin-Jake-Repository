@@ -17,7 +17,7 @@
     <description></description>
     <display-name>AuthenticationServlet</display-name>
     <servlet-name>AuthenticationServlet</servlet-name>
-    <servlet-class>com.revature.servlets.Authentication</servlet-class>
+    <servlet-class>com.revature.servlets.AuthenticationServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AuthenticationServlet</servlet-name>
