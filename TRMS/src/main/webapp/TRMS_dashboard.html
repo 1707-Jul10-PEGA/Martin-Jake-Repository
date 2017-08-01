@@ -28,7 +28,7 @@
 <!--top-Header-menu-->
 <div id="user-nav" class="navbar navbar-inverse">
   <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span class="text">Welcome User</span><b class="caret"></b></a>
+    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span id="userDropdown" class="text"></span><b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
         <li class="divider"></li>
@@ -65,7 +65,7 @@
 <div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
   <ul>
     <li id="homeTab" class="active"><a onclick="loadRequestedSection('TRMS_home.html')"><i class="icon icon-home"></i> <span>Home</span></a></li>
-    <li id="newTRTab" class=""> <a onclick="loadRequestedSection('TRMS_newTR.html')"><i class="icon icon-th-list"></i> <span>Create New Reimbursement Request</span></a></li>
+    <li id="newTRTab" class=""> <a onclick="comboNewTR('TRMS_newTR.html')"><i class="icon icon-th-list"></i> <span>Create New Reimbursement Request</span></a></li>
     <li id="myRequestsTab" class=""> <a onclick="loadRequestedSection('TRMS_check_applications.html')"><i class="icon icon-th-list"></i> <span>View My Requests</span></a></li>
     <li id="checkRequestsTab" class=""> <a onclick="loadRequestedSection('')"><i class="icon icon-file"></i> <span>Check Open Request Applications</span></a></li>
     <li id="myTeamTab" class=""> <a onclick="loadRequestedSection('')"><i class="icon icon-signal"></i> <span>My Team</span></a></li>
@@ -124,6 +124,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
 <script src="js/trms_alerts.js"></script>
 <script src="js/trms_tools.js"></script>
+<script src="js/handlebars-v4.0.10.js"></script>
+<script src="js/ajax/ajaxTools.js"></script>
 
 <script type="text/javascript">
   // This function is called from the pop-up menus to transfer to
@@ -148,10 +150,26 @@
 function resetMenu() {
    document.gomenu.selector.selectedIndex = 2;
 }
+  
+function getCurrentUserInformation(){
+	
+	
+	
+}
+  
+function setUserName(){
+	console.log("inside setUserName");
+	var userInfo = "Welcome {{name}}";
+	var template = Handlebars.compile(userInfo); 
+	var data = template({name: "Martin Delira"});
+	document.getElementById("userDropdown").innerHTML += data;
+
+}
  
 
+//Default page
 loadRequestedSection('TRMS_home.html');
-
+setUserName();
   
 </script>
 </body>

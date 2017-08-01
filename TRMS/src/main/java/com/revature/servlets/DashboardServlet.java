@@ -1,23 +1,23 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.auth.AuthenticateUser;
-
 /**
- * Servlet implementation class Authentication
+ * Servlet implementation class DashboardServlet
  */
-public class Authentication extends HttpServlet {
+public class DashboardServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Authentication() {
+    public DashboardServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,30 +27,18 @@ public class Authentication extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-		System.out.println("inside doGET");
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+				
+		RequestDispatcher view = request.getRequestDispatcher("TRMS_dashboard.html");
+		view.forward(request, response);
+		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-				
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-	
-		
-		AuthenticateUser auth = new AuthenticateUser();
-			
-		if(auth.authenticateUser(username, password)) {
-			System.out.println("Login succesfull");
-		}
-		
-		
-		
-	
-		
+		System.out.println("Inside dashboard");
 	}
 
 }
