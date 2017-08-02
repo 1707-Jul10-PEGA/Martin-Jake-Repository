@@ -12,7 +12,7 @@ public interface Past_ClaimsDAO {
 
 	public void addPast_Claims(Past_Claims pc);
 
-	public void updatePast_Claims(String pcID);
+	public void updatePast_Claims(String pcID, Past_Claims pc);
 
 	public void deletePast_Claims(String pcID);
 	

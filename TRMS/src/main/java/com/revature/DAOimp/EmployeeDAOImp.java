@@ -10,7 +10,6 @@ import java.util.List;
 
 import com.revature.DAO.EmployeeDAO;
 import com.revature.database.ConnectionFactory;
-import com.revature.objects.Approval_Status;
 import com.revature.objects.Employee;
 
 public class EmployeeDAOImp implements EmployeeDAO {
@@ -133,7 +132,7 @@ public class EmployeeDAOImp implements EmployeeDAO {
 			ps.setString(5, emp.getLNAME());
 			ps.setInt(6, emp.getBEN_CO_MEMBER());
 			ps.setString(7, emp.getSUPERVISED_BY());
-			ps.setString(8, emp.getEMPLOYEE_ID());
+			ps.setString(8, empID);
 			
 			ps.executeUpdate();
 		
