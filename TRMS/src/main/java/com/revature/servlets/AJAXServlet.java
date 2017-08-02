@@ -51,7 +51,7 @@ public class AJAXServlet extends HttpServlet {
 
 			String jsonInString = mapper.writeValueAsString(e);
 			
-			System.out.println("jason is " + jsonInString);
+//			System.out.println("jason is " + jsonInString);
 			
 			response.setContentType("application/json");
 			PrintWriter out = response.getWriter();
@@ -76,7 +76,7 @@ public class AJAXServlet extends HttpServlet {
 
 			String jsonInString = mapper.writeValueAsString(trlist);
 
-			System.out.println("jason is " + jsonInString);
+//			System.out.println("jason is " + jsonInString);
 
 			response.setContentType("application/json");
 			PrintWriter out = response.getWriter();
@@ -98,7 +98,7 @@ public class AJAXServlet extends HttpServlet {
 
 			String jsonInString = mapper.writeValueAsString(supervisor);
 
-			System.out.println("jason is " + jsonInString);
+//			System.out.println("jason is " + jsonInString);
 
 			response.setContentType("application/json");
 			PrintWriter out = response.getWriter();
@@ -106,9 +106,11 @@ public class AJAXServlet extends HttpServlet {
 			out.print(jsonInString);
 			out.flush();
 		}
-
-		else
-			System.out.println("Nothing");
+		if(methodRequest.equals("setTRdeleted")) {
+			String trid = request.getParameter("trID");
+			TR_FormDAOImp trdao = new TR_FormDAOImp();
+			trdao.setTRStatusDeleted(trid);
+		}
 
 	}
 

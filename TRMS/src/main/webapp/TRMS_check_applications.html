@@ -25,7 +25,7 @@
 		<div class="span6">
 
 
-			<div id="tr_1" class="widget-box tr_box" >
+			<div id="tr_1" class="widget-box tr_box">
 				<div class="widget-title">
 					<span class="icon"> <i class="icon-align-justify"></i>
 					</span>
@@ -34,17 +34,19 @@
 
 				<div class="widget-content nopadding">
 
-					<form class="form-horizontal">
+					<form class="form-horizontal" action="deleteRequest" method="post">
 						<div class="control-group">
 							<label class="control-label">Requestor name:</label>
 							<div class="controls">
-								<input id="requestorname" type="text" class="span11" placeholder="First name" />
+								<input id="requestorname" type="text" class="span11"
+									placeholder="First name" />
 							</div>
 						</div>
 						<div class="control-group">
 							<label class="control-label">Date Requested:</label>
 							<div class="controls">
-								<input id="daterequested" type="text" class="span11" placeholder="Date" />
+								<input id="daterequested" type="text" class="span11"
+									placeholder="Date" />
 							</div>
 						</div>
 						<div class="control-group">
@@ -76,10 +78,17 @@
 								<input type="text" id="trstatus" class="span11" />
 							</div>
 						</div>
+						
+						
+						<div class="form-actions">
+							<button type="button" id="deleteRequestButton" class="btn btn-success" value=""
+								onclick="deleteRequestPrompt(this.value)">Cancel Request</button>
+						</div>
+
 					</form>
 				</div>
 			</div>
-				
+
 
 		</div>
 	</div>

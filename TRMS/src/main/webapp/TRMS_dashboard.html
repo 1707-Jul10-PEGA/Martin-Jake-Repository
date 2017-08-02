@@ -77,10 +77,10 @@
 			Dashboard</a>
 		<ul>
 			<li id="homeTab" class="active"><a
-				onclick="loadRequestedSection('TRMS_home.html')"><i
+				onclick="loadHome('TRMS_home.html')"><i
 					class="icon icon-home"></i> <span>Home</span></a></li>
 			<li id="newTRTab" class=""><a
-				onclick="viewMyRequests('TRMS_newTR.html')"><i
+				onclick="newTR('TRMS_newTR.html')"><i
 					class="icon icon-th-list"></i> <span>Create New
 						Reimbursement Request</span></a></li>
 			<li id="myRequestsTab" class=""><a
@@ -99,7 +99,9 @@
 
 
 	<!------------------------------main-container-part--------------------------->
-	<div id="content"></div>
+	<div id="content">
+	
+	</div>
 	<!------------------------------end-main-container-part--------------------------------------->
 
 
@@ -191,11 +193,23 @@
 		function setUserName(username) {
 			console.log("inside setUserName");
 			var userInfo = "Welcome {{name}}";
+			
+			var home = "<h5 >{{name}} Reimbursement Summary to date</h5>";
+			
+			
 			var template = Handlebars.compile(userInfo);
+			var template2= Handlebars.compile(home);
+			
 			var data = template({
 				name : username
+			});	
+			
+			var data2 = template2({
+				name : username
 			});
+			
 			document.getElementById("userDropdown").innerHTML += data;
+			document.getElementById("reimbursmentNameHolder").innerHTML += data2;
 
 		}
 

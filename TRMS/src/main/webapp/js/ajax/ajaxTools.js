@@ -17,10 +17,7 @@ function fillForm(user){
 	$("#employeeID").val(employeeId);
 	$("#firstname").val(firstname);
 	$("#lastname").val(lastname);
-	$("#requestdate").val(getFormatedDate);
-	
-	
-	
+	$("#requestdate").val(getFormatedDate);	
 }
 
 function getFormatedDate(){
@@ -118,7 +115,9 @@ function getTRFill(selector){
 					if(item.approval_STATUS == 6){
 						$("#trstatus").val("Denied");
 					}
-					
+					if(item.approval_STATUS == 7){
+						$("#trstatus").val("DELETED BY USER");
+					}
 				}
 
 			
@@ -161,6 +160,8 @@ function getCurrentUserFill(){
 function fillRequestedTR(){
 	
 	var selector = $("#trSelector").val();
+	
+	$("#deleteRequestButton").val(selector);
 					
 	getCurrentUserFill();
 	
@@ -180,4 +181,14 @@ function getSupervisor(){
 		}
 	});
 	
+}
+
+function deleteRequestAjax(requestid){
+	$.ajax({
+		url : 'AJAXRequest?methodRequest=setTRdeleted&trID='+requestid,
+		data: ({}),
+		success : function(data) {	
+			
+		}
+	});
 }

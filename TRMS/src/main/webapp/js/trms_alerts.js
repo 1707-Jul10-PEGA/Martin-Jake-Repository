@@ -32,6 +32,35 @@ function submitTrmsPrompt(formName){
 		 
 }
 
+function deleteRequestPrompt(requestid){
+	
+	swal(
+		{
+		  title: 'Are you sure you want to cancel request:\n' + requestid +  ' ?',
+		  text: "This action is not reversible",
+		  type: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: 'Yes, cancel it!'
+		},function(isConfirm){
+	        if (isConfirm){
+	        	
+	        }
+	    }	
+		).then(function () {
+			swal(
+		    'Your request has been canceled!',
+		    'You can  your request status under `View My Requests` tab',
+		    'success'
+		  ).then(function () {
+			  deleteRequestAjax(requestid);
+		  })
+		  		  
+		})
+		 
+}
+
 function submitForm(formName){
 	
 	$( "#"+formName ).submit(function( event ) {
