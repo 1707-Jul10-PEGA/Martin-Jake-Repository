@@ -13,7 +13,7 @@ public interface TR_FormDAO {
 
 	public void addTR_Form(TR_Form t);
 
-	public void updateTR_Form(String TR_FormID, TR_Form tr);
+	public void updateTR_Form(String TR_FormID);
 
 	public void deleteTR_Form(String TR_FormID);
 	

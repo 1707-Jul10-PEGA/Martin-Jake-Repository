@@ -12,7 +12,7 @@ public interface TitleDAO {
 	
 	public void addTitle(Title t);
 	
-	public void updateTitle(String tID, Title t);
+	public void updateTitle(String tID);
 	
 	public void deleteTitle(String tID);
 	

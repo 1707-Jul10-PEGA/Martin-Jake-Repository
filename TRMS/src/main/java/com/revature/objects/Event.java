@@ -11,29 +11,33 @@ public class Event {
 	private String DESCRIPTION;
 	private int MINIMUM_PASSING_GRADE;
 	private int GRADING_REQUIRED;
-	private String EVENT_NAME;
 	
 	public Event(){}
 
+	
+	
 	public Event(String sTART_DATE, String eND_DATE, String lOCATION, String dESCRIPTION,
-			int mINIMUM_PASSING_GRADE, int gRADING_REQUIRED, String eVENT_NAME) {
+			int mINIMUM_PASSING_GRADE, int gRADING_REQUIRED) {
 		super();
-		EVENT_ID = UUID.randomUUID().toString();
+		EVENT_ID =UUID.randomUUID().toString();
 		START_DATE = sTART_DATE;
 		END_DATE = eND_DATE;
 		LOCATION = lOCATION;
 		DESCRIPTION = dESCRIPTION;
 		MINIMUM_PASSING_GRADE = mINIMUM_PASSING_GRADE;
 		GRADING_REQUIRED = gRADING_REQUIRED;
-		EVENT_NAME = eVENT_NAME;
 	}
+
+
 
 	@Override
 	public String toString() {
 		return "Event [EVENT_ID=" + EVENT_ID + ", START_DATE=" + START_DATE + ", END_DATE=" + END_DATE + ", LOCATION="
 				+ LOCATION + ", DESCRIPTION=" + DESCRIPTION + ", MINIMUM_PASSING_GRADE=" + MINIMUM_PASSING_GRADE
-				+ ", GRADING_REQUIRED=" + GRADING_REQUIRED + ", EVENT_NAME=" + EVENT_NAME + "]";
+				+ ", GRADING_REQUIRED=" + GRADING_REQUIRED + "]";
 	}
+
+
 
 	public String getEVENT_ID() {
 		return EVENT_ID;
@@ -90,16 +94,6 @@ public class Event {
 	public void setGRADING_REQUIRED(int gRADING_REQUIRED) {
 		GRADING_REQUIRED = gRADING_REQUIRED;
 	}
-
-	public String getEVENT_NAME() {
-		return EVENT_NAME;
-	}
-
-	public void setEVENT_NAME(String eVENT_NAME) {
-		EVENT_NAME = eVENT_NAME;
-	}
-
-	
 	
 	
 }

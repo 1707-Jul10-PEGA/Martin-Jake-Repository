@@ -12,31 +12,38 @@
 <link rel="stylesheet" href="css/matrix-media.css" />
 <link href="font-awesome/css/font-awesome.css" rel="stylesheet" />
 <link rel="stylesheet" href="css/jquery.gritter.css" />
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.css" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.css" />
+<link
+	href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,800'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.css" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.css" />
 </head>
 <body>
 
-<!--Header-part-->
-<div id="header">
-  <img alt="" src="img/revaturelogo.png" width="170px" style="margin-left: 20px; margin-top: 10px;">
-</div>
-<!--close-Header-part--> 
+	<!--Header-part-->
+	<div id="header">
+		<img alt="" src="img/revaturelogo.png" width="170px"
+			style="margin-left: 20px; margin-top: 10px;">
+	</div>
+	<!--close-Header-part-->
 
 
-<!--top-Header-menu-->
-<div id="user-nav" class="navbar navbar-inverse">
-  <ul class="nav">
-    <li  class="dropdown" id="profile-messages" ><a title="" href="#" data-toggle="dropdown" data-target="#profile-messages" class="dropdown-toggle"><i class="icon icon-user"></i>  <span id="userDropdown" class="text"></span><b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><a href="#"><i class="icon-user"></i> My Profile</a></li>
-        <li class="divider"></li>
-        <!-- <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
+	<!--top-Header-menu-->
+	<div id="user-nav" class="navbar navbar-inverse">
+		<ul class="nav">
+			<li class="dropdown" id="profile-messages"><a title="" href="#"
+				data-toggle="dropdown" data-target="#profile-messages"
+				class="dropdown-toggle"><i class="icon icon-user"></i> <span
+					id="userDropdown" class="text"></span><b class="caret"></b></a>
+				<ul class="dropdown-menu">
+					<li><a href="#"><i class="icon-user"></i> My Profile</a></li>
+					<li class="divider"></li>
+					<!-- <li><a href="#"><i class="icon-check"></i> My Tasks</a></li>
         <li class="divider"></li> -->
-      </ul>
-    </li>
-    <!-- <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
+				</ul></li>
+			<!-- <li class="dropdown" id="menu-messages"><a href="#" data-toggle="dropdown" data-target="#menu-messages" class="dropdown-toggle"><i class="icon icon-envelope"></i> <span class="text">Messages</span> <span class="label label-important">5</span> <b class="caret"></b></a>
       <ul class="dropdown-menu">
         <li><a class="sAdd" title="" href="#"><i class="icon-plus"></i> new message</a></li>
         <li class="divider"></li>
@@ -47,130 +54,169 @@
         <li><a class="sTrash" title="" href="#"><i class="icon-trash"></i> trash</a></li>
       </ul>
     </li> -->
-    <li class=""><a title="" href="login.html"><i class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
-  </ul>
-</div>
-<!--close-top-Header-menu-->
+			<li class=""><a title="" href="login.html"><i
+					class="icon icon-share-alt"></i> <span class="text">Logout</span></a></li>
+		</ul>
+	</div>
+	<!--close-top-Header-menu-->
 
 
-<!--start-top-serch-->
-<div id="search">
-  <input type="text" placeholder="Search here..."/>
-  <button type="submit" class="tip-bottom" title="Search"><i class="icon-search icon-white"></i></button>
-</div>
-<!--close-top-serch-->
+	<!--start-top-serch-->
+	<div id="search">
+		<input type="text" placeholder="Search here..." />
+		<button type="submit" class="tip-bottom" title="Search">
+			<i class="icon-search icon-white"></i>
+		</button>
+	</div>
+	<!--close-top-serch-->
 
 
-<!--sidebar-menu-->
-<div id="sidebar"><a href="#" class="visible-phone"><i class="icon icon-home"></i> Dashboard</a>
-  <ul>
-    <li id="homeTab" class="active"><a onclick="loadRequestedSection('TRMS_home.html')"><i class="icon icon-home"></i> <span>Home</span></a></li>
-    <li id="newTRTab" class=""> <a onclick="comboNewTR('TRMS_newTR.html')"><i class="icon icon-th-list"></i> <span>Create New Reimbursement Request</span></a></li>
-    <li id="myRequestsTab" class=""> <a onclick="loadRequestedSection('TRMS_check_applications.html')"><i class="icon icon-th-list"></i> <span>View My Requests</span></a></li>
-    <li id="checkRequestsTab" class=""> <a onclick="loadRequestedSection('')"><i class="icon icon-file"></i> <span>Check Open Request Applications</span></a></li>
-    <li id="myTeamTab" class=""> <a onclick="loadRequestedSection('')"><i class="icon icon-signal"></i> <span>My Team</span></a></li>
-  </ul>
-</div>
-<!--sidebar-menu-->
+	<!--sidebar-menu-->
+	<div id="sidebar">
+		<a href="#" class="visible-phone"><i class="icon icon-home"></i>
+			Dashboard</a>
+		<ul>
+			<li id="homeTab" class="active"><a
+				onclick="loadRequestedSection('TRMS_home.html')"><i
+					class="icon icon-home"></i> <span>Home</span></a></li>
+			<li id="newTRTab" class=""><a
+				onclick="viewMyRequests('TRMS_newTR.html')"><i
+					class="icon icon-th-list"></i> <span>Create New
+						Reimbursement Request</span></a></li>
+			<li id="myRequestsTab" class=""><a
+				onclick="myRequests('TRMS_check_applications.html')"><i
+					class="icon icon-th-list"></i> <span>View My Requests</span></a></li>
+			<li id="checkRequestsTab" class=""><a
+				onclick="loadRequestedSection('')"><i class="icon icon-file"></i>
+					<span>Check Open Request Applications</span></a></li>
+			<li id="myTeamTab" class=""><a
+				onclick="loadRequestedSection('')"><i class="icon icon-signal"></i>
+					<span>My Team</span></a></li>
+		</ul>
+	</div>
+	<!--sidebar-menu-->
 
 
 
-<!------------------------------main-container-part--------------------------->
-<div id="content">
+	<!------------------------------main-container-part--------------------------->
+	<div id="content"></div>
+	<!------------------------------end-main-container-part--------------------------------------->
 
 
 
+	<!--Footer-part-->
 
+	<div class="row-fluid">
+		<div id="footer" class="span12">
+			2013 &copy; TRMS. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a>
+		</div>
+	</div>
 
+	<!--end-Footer-part-->
 
+	<script src="js/excanvas.min.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.ui.custom.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="js/jquery.flot.min.js"></script>
+	<script src="js/jquery.flot.resize.min.js"></script>
+	<script src="js/jquery.peity.min.js"></script>
+	<script src="js/fullcalendar.min.js"></script>
+	<script src="js/matrix.js"></script>
+	<script src="js/matrix.dashboard.js"></script>
+	<script src="js/jquery.gritter.min.js"></script>
+	<script src="js/matrix.interface.js"></script>
+	<script src="js/matrix.chat.js"></script>
+	<script src="js/jquery.validate.js"></script>
+	<script src="js/matrix.form_validation.js"></script>
+	<script src="js/jquery.wizard.js"></script>
+	<script src="js/jquery.uniform.js"></script>
+	<script src="js/select2.min.js"></script>
+	<script src="js/matrix.popover.js"></script>
+	<script src="js/jquery.dataTables.min.js"></script>
+	<script src="js/matrix.tables.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
+	<script src="js/trms_alerts.js"></script>
+	<script src="js/trms_tools.js"></script>
+	<script src="js/handlebars-v4.0.10.js"></script>
+	<script src="js/ajax/ajaxTools.js"></script>
 
+	<script type="text/javascript">
+		// This function is called from the pop-up menus to transfer to
+		// a different page. Ignore if the value returned is a null string:
 
+		var currentuserGlobal = null;
 
-</div>
-<!------------------------------end-main-container-part--------------------------------------->
+		function goPage(newURL) {
 
+			// if url is empty, skip the menu dividers and reset the menu selection to default
+			if (newURL != "") {
 
+				// if url is "-", it is this page -- reset the menu:
+				if (newURL == "-") {
+					resetMenu();
+				}
+				// else, send page to designated URL            
+				else {
+					document.location.href = newURL;
+				}
+			}
+		}
 
-<!--Footer-part-->
+		// resets the menu selection upon entry to this page:
+		function resetMenu() {
+			document.gomenu.selector.selectedIndex = 2;
+		}
 
-<div class="row-fluid">
-  <div id="footer" class="span12"> 2013 &copy; TRMS. Brought to you by <a href="http://themedesigner.in">Themedesigner.in</a> </div>
-</div>
+		function getCurrentUserInformation() {
+			$.ajax({
+				url : 'AJAXRequest?methodRequest=getUserInfo',
+				data : ({}),
+				success : function(data) {
+					//You have to call fillForm internally because AJAX wont return
+					//a value since is asynch
+					setUser(data);
+					setUserName(data.fname + " " + data.lname);
+					filterTabs(data.title);
+				}
+			});
+		}
 
-<!--end-Footer-part-->
+		function setUser(user) {
+			currentuserGlobal = user;
+		}
 
-<script src="js/excanvas.min.js"></script> 
-<script src="js/jquery.min.js"></script> 
-<script src="js/jquery.ui.custom.js"></script> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/bootstrap-datepicker.js"></script> 
-<script src="js/jquery.flot.min.js"></script> 
-<script src="js/jquery.flot.resize.min.js"></script> 
-<script src="js/jquery.peity.min.js"></script> 
-<script src="js/fullcalendar.min.js"></script> 
-<script src="js/matrix.js"></script> 
-<script src="js/matrix.dashboard.js"></script> 
-<script src="js/jquery.gritter.min.js"></script> 
-<script src="js/matrix.interface.js"></script> 
-<script src="js/matrix.chat.js"></script> 
-<script src="js/jquery.validate.js"></script> 
-<script src="js/matrix.form_validation.js"></script> 
-<script src="js/jquery.wizard.js"></script> 
-<script src="js/jquery.uniform.js"></script> 
-<script src="js/select2.min.js"></script> 
-<script src="js/matrix.popover.js"></script> 
-<script src="js/jquery.dataTables.min.js"></script> 
-<script src="js/matrix.tables.js"></script> 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.6/sweetalert2.min.js"></script>
-<script src="js/trms_alerts.js"></script>
-<script src="js/trms_tools.js"></script>
-<script src="js/handlebars-v4.0.10.js"></script>
-<script src="js/ajax/ajaxTools.js"></script>
+		function setUserName(username) {
+			console.log("inside setUserName");
+			var userInfo = "Welcome {{name}}";
+			var template = Handlebars.compile(userInfo);
+			var data = template({
+				name : username
+			});
+			document.getElementById("userDropdown").innerHTML += data;
 
-<script type="text/javascript">
-  // This function is called from the pop-up menus to transfer to
-  // a different page. Ignore if the value returned is a null string:
-  function goPage (newURL) {
+		}
 
-      // if url is empty, skip the menu dividers and reset the menu selection to default
-      if (newURL != "") {
-      
-          // if url is "-", it is this page -- reset the menu:
-          if (newURL == "-" ) {
-              resetMenu();            
-          } 
-          // else, send page to designated URL            
-          else {  
-            document.location.href = newURL;
-          }
-      }
-  }
+		function filterTabs(title) {
 
-// resets the menu selection upon entry to this page:
-function resetMenu() {
-   document.gomenu.selector.selectedIndex = 2;
-}
-  
-function getCurrentUserInformation(){
-	
-	
-	
-}
-  
-function setUserName(){
-	console.log("inside setUserName");
-	var userInfo = "Welcome {{name}}";
-	var template = Handlebars.compile(userInfo); 
-	var data = template({name: "Martin Delira"});
-	document.getElementById("userDropdown").innerHTML += data;
+			if (title == 1) {
+			$("#checkRequestsTab").hide();
+			$("#myTeamTab").hide();
+			}
+			if (title == 2) {
 
-}
- 
+			}
+			if (title == 3) {
 
-//Default page
-loadRequestedSection('TRMS_home.html');
-setUserName();
-  
-</script>
+			}
+
+		}
+
+		//Default page
+		loadRequestedSection('TRMS_home.html');
+		getCurrentUserInformation();
+	</script>
 </body>
 </html>

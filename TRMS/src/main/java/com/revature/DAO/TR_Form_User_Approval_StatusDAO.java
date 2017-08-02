@@ -12,7 +12,7 @@ public interface TR_Form_User_Approval_StatusDAO {
 	
 	public void addTUAS(TR_Form_User_Approval_Status t);
 	
-	public void updateTUAS(String tID, TR_Form_User_Approval_Status t);
+	public void updateTUAS(String tID);
 	
 	public void deleteTUAS(String tID);
 	

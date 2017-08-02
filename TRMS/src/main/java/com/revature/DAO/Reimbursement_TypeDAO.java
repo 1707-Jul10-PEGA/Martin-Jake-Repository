@@ -13,7 +13,7 @@ public interface Reimbursement_TypeDAO {
 	
 	public void addReimbursement_Type(Reimbursement_Type rt);
 	
-	public void updateReimbursement_Type(String rtID, Reimbursement_Type e);
+	public void updateReimbursement_Type(String rtID);
 	
 	public void deleteReimbursement_Type(String rtID);
 	
