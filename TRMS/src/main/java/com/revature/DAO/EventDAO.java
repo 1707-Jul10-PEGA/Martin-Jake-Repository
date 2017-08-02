@@ -12,7 +12,7 @@ public interface EventDAO {
 
 	public void addEvent(Event e);
 
-	public void updateEvent(String eventID);
+	public void updateEvent(String eventID, Event e);
 
 	public void deleteEvent(String eventID);
 
