@@ -10,7 +10,6 @@ import java.util.List;
 
 import com.revature.DAO.EventDAO;
 import com.revature.database.ConnectionFactory;
-import com.revature.objects.Employee;
 import com.revature.objects.Event;
 
 public class EventDAOImp implements EventDAO {
@@ -43,13 +42,14 @@ public class EventDAOImp implements EventDAO {
 			rs = s.executeQuery(sql);
 
 			while (rs.next()) {
-				Event ap = new Event(rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6),rs.getInt(7));
+				Event ap = new Event(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6),
+						rs.getInt(7), rs.getString(8));
 				ap.setEVENT_ID(rs.getString(1));
 				al.add(ap);
 
 			}
 		} catch (SQLException e) {
-		
+
 			e.printStackTrace();
 		}
 
@@ -61,19 +61,20 @@ public class EventDAOImp implements EventDAO {
 		conn = cf.getConnection();
 		String sql = "SELECT * FROM Event WHERE Event_ID=?";
 		Event ap = null;
-		
+
 		try {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, eventid);
 			rs = ps.executeQuery();
 
 			while (rs.next()) {
-				ap = new Event(rs.getString(2), rs.getString(3),rs.getString(4),rs.getString(5),rs.getInt(6),rs.getInt(7));
+				ap = new Event(rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6),
+						rs.getInt(7), rs.getString(8));
 				ap.setEVENT_ID(rs.getString(1));
-				
+
 			}
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 
@@ -82,13 +83,53 @@ public class EventDAOImp implements EventDAO {
 
 	@Override
 	public void addEvent(Event e) {
-		// TODO Auto-generated method stub
+
+		conn = cf.getConnection();
+		String sql = "INSERT INTO Event (Event_id, Date_of_event, location, Description, Minimum_passing_grade, grading_required, Event_end_date, Event_name) VALUES (?,?,?,?,?,?,?,?)";
+
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, e.getEVENT_ID());
+			ps.setString(2, e.getSTART_DATE());
+			ps.setString(3, e.getLOCATION());
+			ps.setString(4, e.getDESCRIPTION());
+			ps.setInt(5, e.getMINIMUM_PASSING_GRADE());
+			ps.setInt(6, e.getGRADING_REQUIRED());
+			ps.setString(7, e.getEND_DATE());
+			ps.setString(8, e.getEVENT_NAME());
+			ps.executeUpdate();
+
+		} catch (SQLException e1) {
+
+			e1.printStackTrace();
+		}
 
 	}
 
 	@Override
-	public void updateEvent(String eventID) {
-		// TODO Auto-generated method stub
+	public void updateEvent(String eventID, Event e) {
+		conn = cf.getConnection();
+		String sql = "UPDATE Event SET Event_id=?, Date_of_event=?, location=?, Description=?, Minimum_passing_grade=?, grading_required=?, Event_end_date=?, Event_name=? where event_ID=?)";
+
+		try {
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, e.getEVENT_ID());
+			ps.setString(2, e.getSTART_DATE());
+			ps.setString(3, e.getLOCATION());
+			ps.setString(4, e.getDESCRIPTION());
+			ps.setInt(5, e.getMINIMUM_PASSING_GRADE());
+			ps.setInt(6, e.getGRADING_REQUIRED());
+			ps.setString(7, e.getEND_DATE());
+			ps.setString(8, e.getEVENT_NAME());
+			ps.setString(9, eventID);
+			ps.executeUpdate();
+		
+
+		} catch (SQLException e1) {
+		
+			e1.printStackTrace();
+		}
+
 
 	}
 
