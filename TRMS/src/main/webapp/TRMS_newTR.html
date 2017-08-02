@@ -8,7 +8,7 @@
 	<h1>New Tuition Reimbursement Request Form</h1>
 </div>
 
-<form id="newRequestForm" action="" method="post"
+<form id="newRequestForm" action="createTR" method="post"
 	class="form-horizontal">
 	<div class="container-fluid">
 		<hr>
@@ -123,7 +123,7 @@
 						<div class="control-group">
 							<label class="control-label">Location:</label>
 							<div class="controls">
-								<input type="password" class="span11"
+								<input type="text" class="span11"
 									placeholder="Event location. E.g 'University of Virginia' "
 									id="eventlocation" name="eventlocation" />
 							</div>
@@ -140,7 +140,7 @@
 						<div class="control-group">
 							<label class="control-label">Cost :</label>
 							<div class="controls">
-								<input type="number" class="span11" placeholder="$0.0"
+								<input type="number" class="span11" placeholder="$0.00" step="any"
 									name="eventcost" id="eventcost" />
 							</div>
 						</div>
@@ -162,7 +162,7 @@
 						<div class="control-group">
 							<label class="control-label">File upload input</label>
 							<div class="controls">
-								<input type="file" pla /> <span class="help-block"
+								<input type="file" /> <span class="help-block"
 									id="attachment">Optional</span>
 							</div>
 						</div>
@@ -174,7 +174,6 @@
 	</div>
 
 	<div class="form-actions">
-		<button type="button" class="btn btn-success"
-			onclick="submitTrmsPrompt()">Submit Request</button>
+		<button type="button" class="btn btn-success" onclick="submitTrmsPrompt('newRequestForm')">Submit Request</button>
 	</div>
 </form>
